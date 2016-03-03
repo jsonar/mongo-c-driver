@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 2.8)
-
 project (libmongoc)
 
 option(ENABLE_SSL
@@ -60,6 +59,7 @@ set (CPACK_PACKAGE_VERSION_PATCH ${MONGOC_MICRO_VERSION})
 
 # RPM only for now, el6 and debian will come later
 include(GNUInstallDirs)
+set (CMAKE_INSTALL_PREFIX "/usr")
 set (CPACK_PACKAGING_INSTALL_PREFIX "/usr")
 set (CPACK_GENERATOR RPM)
 set (CPACK_PACKAGE_VENDOR "jsonar")
