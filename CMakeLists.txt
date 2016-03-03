@@ -67,8 +67,10 @@ if (${CPACK_GENERATOR} STREQUAL "RPM")
     OUTPUT_VARIABLE CPACK_RPM_PACKAGE_ARCHITECTURE
     OUTPUT_STRIP_TRAILING_WHITESPACE)
   execute_process(
-    COMMAND rpm "-q" "--queryformat" "%{RELEASE}" redhat-release-server
-    COMMAND cut "-d." "-f2"
+    COMMAND rpm "-q" "--queryformat" "%{RELEASE}" rpm
+    COMMAND rev
+    COMMAND cut "-d." "-f1"
+    COMMAND rev
     OUTPUT_VARIABLE RHEL
     OUTPUT_STRIP_TRAILING_WHITESPACE)
   set (CPACK_PACKAGE_FILE_NAME
