@@ -2,3 +2,6 @@
 	path = src/libbson
 	url = https://github.com/mongodb/libbson.git
 	ignore = dirty
+[submodule "cmake"]
+	path = cmake
+	url = https://github.com/jsonar/cmake
